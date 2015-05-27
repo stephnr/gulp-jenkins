@@ -1,8 +1,7 @@
 # gulp-jenkins
 Jenkins plugin for Gulp
 
-[![Dependency Status](https://david-dm.org/stephn-r/gulp-jenkins.svg)](https://david-dm.org/boennemann/badges) [![devDependency Status](https://david-dm.org/stephn-r/gulp-jenkins/dev-status.svg)](https://david-dm.org/boennemann/badges#info=devDependencies)
-[![npm version](https://badge.fury.io/js/gulp-jenkins.svg)](http://badge.fury.io/js/gulp-jenkins)
+[![npm version](https://badge.fury.io/js/gulp-jenkins.svg)](http://badge.fury.io/js/gulp-jenkins) [![Dependency Status](https://david-dm.org/stephn-r/gulp-jenkins.svg)](https://david-dm.org/boennemann/badges) [![devDependency Status](https://david-dm.org/stephn-r/gulp-jenkins/dev-status.svg)](https://david-dm.org/boennemann/badges#info=devDependencies)
 
 ## Information
 
