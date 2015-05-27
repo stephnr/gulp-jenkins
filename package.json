@@ -1,0 +1,39 @@
+{
+  "name": "gulp-jenkins",
+  "version": "0.0.1",
+  "description": "Jenkins Plugin for Gulp",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Stephn-R/gulp-jenkins.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Stephn-R/gulp-jenkins/issues"
+  },
+  "keywords": [
+    "jenkins",
+    "gulp",
+    "plugin",
+    "gulp-plugin"
+  ],
+  "author": "Stephen Rodriguez <steprodriguez10@gmail.com>",
+  "license": "GNU GPL v2",
+  "homepage": "https://github.com/Stephn-R/gulp-jenkins",
+  "dependencies": {
+    "gulp-util": "^3.0.4",
+    "http": "0.0.0",
+    "jenkins-api": "^0.2.7",
+    "object-assign": "^2.0.0",
+    "qs": "^3.0.0",
+    "through2": "^0.6.5"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11"
+  }
+}
