@@ -156,6 +156,14 @@
     return gulpJenkins();
   };
 
+  gulpJenkins.create_job = function(job_name, config, cb) {
+    if(!hasInitialized()) { return new PluginError(PLUGIN_NAME, 'gulp-jenkins has not been initialized'); }
+    callback = cb || callback;
+    jenkinsService(AUTH).create_job(job_name, config, callback);
+    return gulpJenkins();
+  };
+
+
   gulpJenkins.delete_job = function(job_name, cb) {
     if(!hasInitialized()) { return new PluginError(PLUGIN_NAME, 'gulp-jenkins has not been initialized'); }
     callback = cb || callback;
