@@ -32,9 +32,9 @@
     // Auth or no auth provided?
     if(typeof c !== 'undefined') {
       if(typeof c.username !== 'undefined' && typeof c.password !== 'undefined') {
-        return jenkinsAPI.init('http://'+c.username+':'+c.password+'@'+c.url);
+        return jenkinsAPI.init('http://'+c.username+':'+c.password+'@'+c.url, c);
       } else { return new PluginError(PLUGIN_NAME, 'the provided credentials are missing a username and password'); }
-    } else { return jenkinsAPI.init('http://'+c.url); }
+    } else { return jenkinsAPI.init('http://'+c.url, c); }
   }
 
   function callback(err, data) {
