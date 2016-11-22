@@ -1,6 +1,6 @@
 {
   "name": "gulp-jenkins",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Jenkins Plugin for Gulp",
   "main": "index.js",
   "directories": {
@@ -27,7 +27,7 @@
   "homepage": "https://github.com/Stephn-R/gulp-jenkins",
   "dependencies": {
     "gulp-util": "^3.0.4",
-    "jenkins-api": "^0.2.7",
+    "jenkins-api": "ondrejchmelar/node-jenkins-api.git#0.2.8",
     "object-assign": "^2.0.0",
     "through2": "^0.6.5"
   }
