@@ -206,6 +206,13 @@
     return gulpJenkins();
   };
 
+  gulpJenkins.create_folder = function(folder_name, cb) {
+    if(!hasInitialized()) { return new PluginError(PLUGIN_NAME, 'gulp-jenkins has not been initialized'); }
+    callback = cb || callback;
+    jenkinsService(AUTH).create_folder(folder_name, callback);
+    return gulpJenkins();
+  };
+
 	module.exports = gulpJenkins;
 
 })();
