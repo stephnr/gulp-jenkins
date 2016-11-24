@@ -4,7 +4,7 @@
   "description": "Jenkins Plugin for Gulp",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "mocha --recursive __tests__/"
   },
   "repository": {
     "type": "git",
@@ -16,15 +16,16 @@
   "keywords": [
     "jenkins",
     "gulp",
-    "plugin",
-    "gulp-plugin"
+    "plugin"
   ],
   "author": "Stephen Rodriguez <steprodriguez10@gmail.com>",
   "license": "GNU GPL v2",
   "homepage": "https://github.com/Stephn-R/gulp-jenkins",
   "dependencies": {
+    "chai": "^3.5.0",
     "gulp-util": "^3.0.4",
     "jenkins-api": "^0.2.7",
+    "mocha": "^3.1.2",
     "object-assign": "^2.0.0",
     "through2": "^0.6.5"
   }
