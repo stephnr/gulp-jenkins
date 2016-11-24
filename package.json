@@ -1,6 +1,6 @@
 {
   "name": "gulp-jenkins",
-  "version": "0.2.1",
+  "version": "0.1.2",
   "description": "Jenkins Plugin for Gulp",
   "main": "index.js",
   "directories": {
