@@ -1,16 +1,24 @@
 (function(){
 	'use strict';
 
+  // ────────────────────────────────────────────────────────────────────────────────
+  // MODULES
+
   var through = require('through2');
   var assign = require('object-assign');
   var jenkinsAPI = require('jenkins-api');
   var gutil = require('gulp-util');
+
+  // ────────────────────────────────────────────────────────────────────────────────
 
 	var PluginError = gutil.PluginError;
 
   var AUTH;
   var PLUGIN_NAME = 'gulp-jenkins';
 
+  // ────────────────────────────────────────────────────────────────────────────────
+
+  // Setup gulp access level
   var gulpJenkins = function() {
     return through.obj(function(file, enc, cb) {
       if (file.isNull()) {
@@ -27,9 +35,15 @@
     });
   };
 
-  // {c} => credentials are optional
+
+  /**
+   * Prepares a request to the jenkins service using a config object
+   *
+   * @param {any} c - the auth configurations object
+   * @returns
+   */
   function jenkinsService(c) {
-    // Auth or no auth provided?
+    // Check if an authorization config object is provided
     if(typeof c !== 'undefined') {
       if(typeof c.username !== 'undefined' && typeof c.password !== 'undefined') {
         return jenkinsAPI.init('http://'+c.username+':'+c.password+'@'+c.url, c);
@@ -37,12 +51,19 @@
     } else { return jenkinsAPI.init('http://'+c.url, c); }
   }
 
+  /**
+   * Default callback handler
+   *
+   * @param {any} err - the error object
+   * @param {any} data - the data is successful
+   */
   function callback(err, data) {
     if(err) { return new PluginError(PLUGIN_NAME, 'failed to build with params :: ' + err.message); }
     gutil.log('Jenkins: '+gutil.colors.green(data.message));
     gutil.log('Location: \''+gutil.colors.cyan(data.location)+'\'');
   }
 
+  /** Checks for an authorized session */
   function hasInitialized() {
     if(typeof AUTH === 'undefined') {
       return false;
@@ -51,11 +72,11 @@
     }
   }
 
-  gulpJenkins.init = function(credentials) {
-    if(typeof credentials.url === 'undefined') {
+  gulpJenkins.init = function(creds) {
+    if(typeof creds.url === 'undefined') {
       return new PluginError(PLUGIN_NAME, 'the jenkins url was not provided');
     }
-    AUTH = credentials;
+    AUTH = creds;
   };
 
   gulpJenkins.all_jobs = function(cb) {

@@ -52,13 +52,14 @@ Since ```gulp-jenkins``` is a very lightweight wrapper on top of [node-jenkins-a
 ```javascript
 gulp.task('build production', function() {
   return gulp.src('./*')
-    .pipe(jenkins.build('Secret_App', {
-      target_env: 'prod',
-      tag_name: 'tags/v0.07/trunk',
-    }, function(err, data) {
-    	if(err) { /* do something */ }
-    	else { /* do something else */ }
-    }));
+  .pipe(jenkins.build('Secret_App', {
+    target_env: 'prod',
+    tag_name: 'tags/v0.07/trunk',
+  }, function(err, data) {
+    if(err) { /* do something */ }
+    else { /* do something else */ }
+  }));
+});
 ```
 
 **TIP**: The last parameter of any function in ```gulp-jenkins``` is the optional ```callback``` parameter

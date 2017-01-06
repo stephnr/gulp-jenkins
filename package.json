@@ -1,6 +1,6 @@
 {
   "name": "gulp-jenkins",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Jenkins Plugin for Gulp",
   "main": "index.js",
   "scripts": {
@@ -14,12 +14,17 @@
     "url": "https://github.com/Stephn-R/gulp-jenkins/issues"
   },
   "keywords": [
-    "jenkins",
+    "deploy",
     "gulp",
-    "plugin"
+    "jenkins",
+    "plugin",
+    "tool"
   ],
-  "author": "Stephen Rodriguez <steprodriguez10@gmail.com>",
-  "license": "GNU GPL v2",
+  "author": {
+    "email": "steprodriguez10@gmail.com",
+    "name": "Stephen Rodriguez"
+  },
+  "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/Stephn-R/gulp-jenkins",
   "dependencies": {
     "chai": "^3.5.0",
